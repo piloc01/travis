@@ -24,16 +24,16 @@ public class ShoppingCart {
     }
 
     public Double getPriceWithTaxes(Country country) {
-        return getPriceWithoutTaxes() * country.getTaxToApply();
+        return getPriceWithReduction() * country.getTaxToApply();
     }
 
-    public Double getPriceWithReduction(Double priceWithTaxes) {
+    public Double getPriceWithReduction() {
         Double price = this.getPriceWithoutTaxes();
-        if(price<1000) return priceWithTaxes;
-        else if(price<5000) return priceWithTaxes * 0.97;
-        else if(price<7000) return priceWithTaxes * 0.95;
-        else if(price<10000) return priceWithTaxes * 0.93;
-        else if(price<50000) return priceWithTaxes * 0.9;
-        else return priceWithTaxes * 0.85;
+        if(price<1000) return price;
+        else if(price<5000) return price * 0.97;
+        else if(price<7000) return price * 0.95;
+        else if(price<10000) return price * 0.93;
+        else if(price<50000) return price * 0.9;
+        else return price * 0.85;
     }
 }
