@@ -70,10 +70,10 @@ public class TestShoppingCart {
     public void computePriceWithReductionDK(){
         final ShoppingCart shoppingCart = new ShoppingCart();
         final Item carot = new Item("carot", 2.5);
-        shoppingCart.addItem(carot, 1);
-        shoppingCart.addItem(new Item("aple", 1), 25);
-        shoppingCart.addItem(new Item("bananas 1kg", 5), 3);
-        Assert.assertEquals(shoppingCart.getPriceWithReduction(shoppingCart.getPriceWithTaxes(Country.DK)), 53.125, 0.0001);
+        shoppingCart.addItem(carot, 0);
+        shoppingCart.addItem(new Item("aple", 1), 0);
+        shoppingCart.addItem(new Item("bananas 1kg", 5), 10000);
+        Assert.assertEquals(shoppingCart.getPriceWithReduction(shoppingCart.getPriceWithTaxes(Country.DK)), 53125, 0.0001);
     }
 
     @Test
