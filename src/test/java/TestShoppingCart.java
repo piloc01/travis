@@ -29,6 +29,7 @@ public class TestShoppingCart {
         shoppingCart.addItem(new Item("bananas 1kg", 5), 3);
         Assert.assertEquals(shoppingCart.getPriceWithoutTaxes(), 42.5, 0.0001);
     }
+}
 
 
 
